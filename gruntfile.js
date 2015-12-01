@@ -3,6 +3,24 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
+
+    htmlmin: {                                     // Task 
+        production: {                                      // Target 
+          options: {                                 // Target options 
+            removeComments: true,
+            collapseWhitespace: true
+          },
+          files: {
+            'prod/index.html': 'src/index.html'     // 'destination': 'source' 
+          }
+        },
+        development: {
+          files: {
+            'dev/index.html': 'src/index.html'
+          }
+        }
+    },
     
 
     sass:{
@@ -11,8 +29,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          //'_assets/css/bootstrap.css' : 'src/scss/bootstrap.scss',
-          '_assets/css/custom.css' : 'src/scss/custom.scss'
+          'dev/assets/css/app.css' : 'src/scss/app.scss'
         }
       },
       production: {
@@ -20,15 +37,14 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files:{
-          //'_assets/css/bootstrap.css' : 'src/scss/bootstrap.scss',
-          '_assets/css/custom.css' : 'src/scss/custom.scss'
+          'prod/assets/css/app.css' : 'src/scss/app.scss'
         }
       }
     },
 
     watch: {
       css:{
-        files: ['src/scss/*.scss', 'src/bootstrap-sass-3.3.5/assets/stylesheets/**/*.scss'],
+        files: ['src/scss/*.scss', 'src/bootstrap-sass-3.3.6/assets/stylesheets/**/*.scss'],
         tasks: ['sass:development']
       }
     }
@@ -37,12 +53,16 @@ module.exports = function(grunt) {
     
   });
 
-  // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+
+
 
   // Default task(s).
-  grunt.registerTask('default', ['sass:development']);
-  grunt.registerTask('production', ['sass:production']);
+  grunt.registerTask('default', ['htmlmin:development', 'sass:development']);
+  grunt.registerTask('production', ['htmlmin:production', 'sass:production']);
 
 };

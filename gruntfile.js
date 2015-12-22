@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     uglify: {
       production: {
         files: {
-          'prod/assets/js/scripts.min.js' : ['src/javascript/lib/jquery-1.11.3.js', 'src/bootstrap-sass-3.3.6/assets/javascripts/bootstrap.js', 'node_modules/angular/angular.js',  'src/javascript/custom/*.js']
+          'prod/assets/js/scripts.min.js' : ['src/javascript/lib/jquery-1.11.3.js', 'src/bootstrap-sass-3.3.6/assets/javascripts/bootstrap.js', 'node_modules/angular/angular.js', 'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js', 'src/javascript/custom/*.js']
         }
       },
       development: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
           preserveComments: 'all'
         },
         files: {
-          'dev/assets/js/scripts.min.js' : ['src/javascript/lib/jquery-1.11.3.js', 'src/bootstrap-sass-3.3.6/assets/javascripts/bootstrap.js', 'node_modules/angular/angular.js', 'src/javascript/custom/*.js']
+          'dev/assets/js/scripts.min.js' : ['src/javascript/lib/jquery-1.11.3.js', 'src/bootstrap-sass-3.3.6/assets/javascripts/bootstrap.js', 'node_modules/angular/angular.js', 'bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js', 'src/javascript/custom/*.js']
         }
       }
     },

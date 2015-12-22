@@ -20,7 +20,7 @@
     <![endif]-->
 
   </head>
-  <body>
+  <body ng-app="demo">
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -30,70 +30,51 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-4">
-          
-          <div class="panel panel-primary panel-backlog">
-            <div class="panel-heading">
-              <h3 class="panel-title text-center">Backlog</h3>
-            </div>
-            <div class="panel-body">
-              <ul class="cards">
-                <li class="card">
-                  Welcome to Trello!
-                  <ul class="actions">
-                    <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
-                  </ul>
-                </li>
-                <li class="card">
-                  Welcome to Trello!
-                  <ul class="actions">
-                    <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
-                  </ul>
-                </li>
-                <li class="card">
-                  Welcome to Trello!
-                  <ul class="actions">
-                    <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
+
+    
+    <div class="container-fluid" ng-controller="SimpleDemoController">
+      <div class="simpleDemo row">
+          <div class="col-md-8">
+              <div class="row">
+                  <div ng-repeat="(listName, list) in models.lists" class="col-xs-4">
+                      <div class="panel panel-info">
+                          <div class="panel-heading">
+                              <h3 class="panel-title text-center">{{listName}}</h3>
+                          </div>
+                          
+                          <!-- The dnd-list directive allows to drop elements into it.
+                               The dropped data will be added to the referenced list -->
+                          <ul dnd-list="list">
+                              <!-- The dnd-draggable directive makes an element draggable and will
+                                   transfer the object that was assigned to it. If an element was
+                                   dragged away, you have to remove it from the original list
+                                   yourself using the dnd-moved attribute -->
+                              <li ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                                  {{item.label}}
+                              </li>
+                          </ul>
+
+                      </div>
+                  </div>
+              </div>
+      
+              <div view-source="simple"></div>
+      
+          </div>
+      
+          <div class="col-md-4">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Generated Model</h3>
+                  </div>
+                  <div class="panel-body">
+                      <pre class="code">{{modelAsJson}}</pre>
+                  </div>
+              </div>
           </div>
 
-        </div>
-        <div class="col-xs-4">
-          
-          <div class="panel panel-primary panel-inprogress">
-            <div class="panel-heading">
-              <h3 class="panel-title text-center">In Progress</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-
-        </div>
-        <div class="col-xs-4">
-          
-          <div class="panel panel-primary panel-done">
-            <div class="panel-heading">
-              <h3 class="panel-title text-center">Done</h3>
-            </div>
-            <div class="panel-body">
-              Panel content
-            </div>
-          </div>
-
-        </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container-fluid">
-        <h3>Recycle Bin</h3>
-      </div>
-    </footer>
     <script src="assets/js/scripts.min.js"></script>
   </body>
 </html>

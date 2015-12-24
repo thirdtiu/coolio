@@ -20,8 +20,7 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
     }
 
     $scope.addItem = function(columnName){
-        $scope.models.lists.Backlog.push({label: "Story #1"});
-        alert(columnName);
+        $scope.models.lists[columnName].push({label: "Story #1"});
     }
 
     // Model to JSON for demo purpose

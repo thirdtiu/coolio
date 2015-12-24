@@ -19,6 +19,11 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
         $scope.models.lists.Done.push({label: "Item C" + i});
     }
 
+    $scope.addItem = function(columnName){
+        $scope.models.lists.Backlog.push({label: "Story #1"});
+        alert(columnName);
+    }
+
     // Model to JSON for demo purpose
     $scope.$watch('models', function(model) {
         $scope.modelAsJson = angular.toJson(model, true);

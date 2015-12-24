@@ -7829,6 +7829,11 @@ body {
   background-color: #f5f5f5;
 }
 
+/** THE 3 MAJOR PANELS **/
+.add-story {
+  color: #fff;
+}
+
 /**
  * For the correct positioning of the placeholder element, the dnd-list and
  * it's children must have position: relative

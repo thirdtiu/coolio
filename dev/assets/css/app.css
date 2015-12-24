@@ -7789,7 +7789,7 @@ body {
   padding: 0;
 }
 
-.cards .card {
+.cards > .card {
   background-color: #fff;
   padding: 10px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -7798,7 +7798,7 @@ body {
   position: relative;
 }
 
-.cards .card:hover .actions a {
+.cards > .card:hover .actions a {
   color: #a3a3a3;
 }
 
@@ -7810,6 +7810,11 @@ body {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
+}
+
+.cards .actions li {
+  float: left;
+  padding: 0;
 }
 
 .cards .actions a {
@@ -7880,7 +7885,7 @@ body {
  * half of the element we are dragging over. In other
  * browsers we can use event.offsetY for this.
  */
-.simpleDemo ul[dnd-list] li {
+.simpleDemo ul[dnd-list] > li {
   display: block;
   padding: 10px 15px;
 }

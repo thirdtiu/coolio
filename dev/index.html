@@ -42,7 +42,7 @@
                               <h3 class="panel-title text-center">
                                 {{ listName == 'InProgress' ? 'In Progress' : listName}}
                               </h3>
-                              <a href="#" class="add-story" ng-click="addItem(listName)">Add Story</a>
+                              <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
                           </div>
                           <div class="panel-body">
                             <!-- The dnd-list directive allows to drop elements into it.
@@ -53,7 +53,11 @@
                                      dragged away, you have to remove it from the original list
                                      yourself using the dnd-moved attribute -->
                                 <li class="card" ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
-                                    {{item.label}}
+                                    <span>{{item.label}}</span>
+                                    <ul class="actions">
+                                      <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
+                                      <li><a href="#" title="Delete"><i class="material-icons">clear</i></a></li>
+                                    </ul>
                                 </li>
                             </ul>
                           </div>

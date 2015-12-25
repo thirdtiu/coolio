@@ -9,7 +9,8 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
 
     $scope.models = {
         selected: null,
-        lists: {"Backlog": [], "InProgress": [], "Done" : []}
+        lists: {"Backlog": [], "InProgress": [], "Done" : []},
+        trash: {"item": []}
     };
 
     // Generate initial model
@@ -20,7 +21,14 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
     }
 
     $scope.addItem = function(columnName){
+        // Adds a new story to either Backlog, InProgress, and Done Column
         $scope.models.lists[columnName].push({label: "Story #1"});
+    }
+
+    $scope.moveToTrash = function(columnName, label){
+        //Pressing 'x' on a story moves the item to the bottom Trash
+        $scope.models.trash.item.push({label: label, column: columnName});
+         // alert(columnName + label);
     }
 
     // Model to JSON for demo purpose

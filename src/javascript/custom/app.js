@@ -10,7 +10,7 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
     $scope.models = {
         selected: null,
         lists: {"Backlog": [], "InProgress": [], "Done" : []},
-        trash: {"item": []}
+        trashItems: {"items": []}
     };
 
     // Generate initial model
@@ -27,7 +27,7 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
 
     $scope.moveToTrash = function(columnName, label){
         //Pressing 'x' on a story moves the item to the bottom Trash
-        $scope.models.trash.item.push({label: label, column: columnName});
+        $scope.models.trashItems.items.push({label: label, column: columnName});
          // alert(columnName + label);
     }
 

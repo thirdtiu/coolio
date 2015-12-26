@@ -1397,12 +1397,12 @@ textarea {
 }
 
 a {
-  color: #45A2BD;
+  color: #333;
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: #307386;
+  color: #0d0d0d;
   text-decoration: underline;
 }
 
@@ -1633,12 +1633,12 @@ mark,
 }
 
 .text-primary {
-  color: #45A2BD;
+  color: #333;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #368399;
+  color: #1a1a1a;
 }
 
 .text-success {
@@ -1682,12 +1682,12 @@ a.text-danger:focus {
 }
 
 .bg-primary {
-  background-color: #45A2BD;
+  background-color: #333;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #368399;
+  background-color: #1a1a1a;
 }
 
 .bg-success {
@@ -3720,27 +3720,27 @@ fieldset[disabled] .btn-default.focus {
 
 .btn-primary {
   color: #fff;
-  background-color: #45A2BD;
-  border-color: #3d93ac;
+  background-color: #333;
+  border-color: #262626;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #368399;
-  border-color: #1c424e;
+  background-color: #1a1a1a;
+  border-color: black;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #368399;
-  border-color: #2d6c7e;
+  background-color: #1a1a1a;
+  border-color: #080808;
 }
 
 .btn-primary:active, .btn-primary.active,
 .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #368399;
-  border-color: #2d6c7e;
+  background-color: #1a1a1a;
+  border-color: #080808;
 }
 
 .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
@@ -3748,8 +3748,8 @@ fieldset[disabled] .btn-default.focus {
 .open > .btn-primary.dropdown-toggle:focus,
 .open > .btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: #2d6c7e;
-  border-color: #1c424e;
+  background-color: #080808;
+  border-color: black;
 }
 
 .btn-primary:active, .btn-primary.active,
@@ -3761,12 +3761,12 @@ fieldset[disabled] .btn-default.focus {
 fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus {
-  background-color: #45A2BD;
-  border-color: #3d93ac;
+  background-color: #333;
+  border-color: #262626;
 }
 
 .btn-primary .badge {
-  color: #45A2BD;
+  color: #333;
   background-color: #fff;
 }
 
@@ -3979,7 +3979,7 @@ fieldset[disabled] .btn-danger.focus {
 }
 
 .btn-link {
-  color: #45A2BD;
+  color: #333;
   font-weight: normal;
   border-radius: 0;
 }
@@ -3996,7 +3996,7 @@ fieldset[disabled] .btn-link {
 }
 
 .btn-link:hover, .btn-link:focus {
-  color: #307386;
+  color: #0d0d0d;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4158,7 +4158,7 @@ tbody.collapse.in {
   color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: #45A2BD;
+  background-color: #333;
 }
 
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {
@@ -4642,7 +4642,7 @@ tbody.collapse.in {
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #45A2BD;
+  border-color: #333;
 }
 
 .nav .nav-divider {
@@ -4698,7 +4698,7 @@ tbody.collapse.in {
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   color: #fff;
-  background-color: #45A2BD;
+  background-color: #333;
 }
 
 .nav-stacked > li {
@@ -5172,8 +5172,8 @@ tbody.collapse.in {
 }
 
 .navbar-default {
-  background-color: #45A2BD;
-  border-color: #3b8ea6;
+  background-color: #333;
+  border-color: #222222;
 }
 
 .navbar-default .navbar-brand {
@@ -5200,7 +5200,7 @@ tbody.collapse.in {
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: #555;
-  background-color: #3b8ea6;
+  background-color: #222222;
 }
 
 .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
@@ -5222,11 +5222,11 @@ tbody.collapse.in {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #3b8ea6;
+  border-color: #222222;
 }
 
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #3b8ea6;
+  background-color: #222222;
   color: #555;
 }
 
@@ -5240,7 +5240,7 @@ tbody.collapse.in {
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #555;
-    background-color: #3b8ea6;
+    background-color: #222222;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
     color: #ccc;
@@ -5415,7 +5415,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   padding: 6px 12px;
   line-height: 1.428571429;
   text-decoration: none;
-  color: #45A2BD;
+  color: #333;
   background-color: #fff;
   border: 1px solid #ddd;
   margin-left: -1px;
@@ -5438,7 +5438,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > span:hover,
 .pagination > li > span:focus {
   z-index: 2;
-  color: #307386;
+  color: #0d0d0d;
   background-color: #eeeeee;
   border-color: #ddd;
 }
@@ -5449,8 +5449,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: #45A2BD;
-  border-color: #45A2BD;
+  background-color: #333;
+  border-color: #333;
   cursor: default;
 }
 
@@ -5595,11 +5595,11 @@ a.label:hover, a.label:focus {
 }
 
 .label-primary {
-  background-color: #45A2BD;
+  background-color: #333;
 }
 
 .label-primary[href]:hover, .label-primary[href]:focus {
-  background-color: #368399;
+  background-color: #1a1a1a;
 }
 
 .label-success {
@@ -5666,7 +5666,7 @@ a.label:hover, a.label:focus {
 
 .list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #45A2BD;
+  color: #333;
   background-color: #fff;
 }
 
@@ -5768,7 +5768,7 @@ a.badge:hover, a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #45A2BD;
+  border-color: #333;
 }
 
 .alert {
@@ -5901,7 +5901,7 @@ a.thumbnail.active {
   line-height: 22px;
   color: #fff;
   text-align: center;
-  background-color: #45A2BD;
+  background-color: #333;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
@@ -6090,8 +6090,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
   z-index: 2;
   color: #fff;
-  background-color: #45A2BD;
-  border-color: #45A2BD;
+  background-color: #333;
+  border-color: #333;
 }
 
 .list-group-item.active .list-group-item-heading,
@@ -6105,7 +6105,7 @@ button.list-group-item {
 }
 
 .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
-  color: #dcedf2;
+  color: #999999;
 }
 
 .list-group-item-success {
@@ -6548,26 +6548,26 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-primary {
-  border-color: #45A2BD;
+  border-color: #333;
 }
 
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #45A2BD;
-  border-color: #45A2BD;
+  background-color: #333;
+  border-color: #333;
 }
 
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #45A2BD;
+  border-top-color: #333;
 }
 
 .panel-primary > .panel-heading .badge {
-  color: #45A2BD;
+  color: #333;
   background-color: #fff;
 }
 
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #45A2BD;
+  border-bottom-color: #333;
 }
 
 .panel-success {
@@ -7738,15 +7738,6 @@ button.close {
   }
 }
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
-}
-
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -7826,11 +7817,10 @@ body {
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
   background-color: #f5f5f5;
 }
 

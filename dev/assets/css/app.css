@@ -7887,3 +7887,16 @@ body {
   background-color: #dff0d8;
   color: #3c763d;
 }
+
+#trash-box {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid red;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  border-top-left-radius: 20px;
+}

@@ -6570,6 +6570,24 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #333;
 }
 
+.panel-primary .panel-heading {
+  padding: 0;
+}
+
+.panel-primary .panel-title {
+  padding: 10px 0;
+}
+
+.panel-primary .nav > li > a {
+  color: #fff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.panel-primary > .actions {
+  background-color: #4d4d4d;
+}
+
 .panel-success {
   border-color: #d6e9c6;
 }
@@ -7896,6 +7914,15 @@ body {
   bottom: 0;
   right: 0;
   z-index: 9999;
+  -webkit-border-top-left-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  border-top-left-radius: 20px;
+}
+
+#trash-box .toggle-button {
+  display: block;
+  width: 40px;
+  height: 40px;
   -webkit-border-top-left-radius: 20px;
   -moz-border-radius-topleft: 20px;
   border-top-left-radius: 20px;

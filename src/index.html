@@ -19,7 +19,7 @@
     <![endif]-->
 
   </head>
-  <body ng-app="demo">
+  <body ng-app="collabsApp">
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -30,7 +30,7 @@
       </div>
     </nav>
 
-    <div ng-controller="SimpleDemoController">
+    <div ng-controller="CollabsController">
       
       <div class="container-fluid">
         <div class="simpleDemo row">
@@ -42,7 +42,16 @@
                                 <h3 class="panel-title text-center">
                                   {{ listName == 'InProgress' ? 'In Progress' : listName}}
                                 </h3>
-                                <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
+                                <div class="actions">
+                                  <ul class="nav nav-justified">
+                                    <li>
+                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
+                                    </li>
+                                    <li>
+                                      <a href="#" class="" ng-click="" title="Clear Story">Clear Board</a>
+                                    </li>
+                                  </ul>
+                                </div>
                             </div>
                             <div class="panel-body">
                               <!-- The dnd-list directive allows to drop elements into it.
@@ -90,8 +99,8 @@
 
         </div>
       </div>
-      <div id="trash-box">
-        <h1>this is the trash box</h1>
+      <div id="trash-box" class="collapsed">
+        <a href="#" class="collapsed toggle-button" ng-click="toggleTrashBox()">T</a>
       </div>
       <footer class="footer">
         <div class="container-fluid">

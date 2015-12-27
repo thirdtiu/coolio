@@ -3,9 +3,9 @@
 // var collabsApp = angular.module('collabsApp', [
 //     'collabsControllers'
 // ]);
-angular.module("demo", ["dndLists"]);
+angular.module("collabsApp", ["dndLists"]);
 
-angular.module("demo").controller("SimpleDemoController", function($scope) {
+angular.module("collabsApp").controller("CollabsController", function($scope) {
 
     $scope.models = {
         selected: null,
@@ -31,9 +31,16 @@ angular.module("demo").controller("SimpleDemoController", function($scope) {
          // alert(columnName + label);
     }
 
+    $scope.toggleTrashBox = function(){
+        if( $("#trash-box").hasClass("collapsed") ){
+            alert("collapsed");
+        }
+    }
+
     // Model to JSON for demo purpose
     $scope.$watch('models', function(model) {
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
+
 
 });

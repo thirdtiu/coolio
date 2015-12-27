@@ -257,6 +257,20 @@
 }
 .panel-primary {
   @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
+  .panel-heading{
+    padding:0;
+  }
+  .panel-title{
+    padding:10px 0;
+  }
+  .nav > li > a{
+    color: #fff;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  & > .actions{
+    background-color:lighten($brand-primary, 10%);
+  }
 }
 .panel-success {
   @include panel-variant($panel-success-border, $panel-success-text, $panel-success-heading-bg, $panel-success-border);

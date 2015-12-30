@@ -36,7 +36,7 @@
         <div class="simpleDemo row">
             <div class="col-xs-10">
                 <div class="row">
-                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4">
+                    <div ng-repeat="(listName, list) in models.lists track by $index" class="col-xs-4">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-center">

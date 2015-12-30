@@ -3,38 +3,30 @@
 // var collabsApp = angular.module('collabsApp', [
 //     'collabsControllers'
 // ]);
-angular.module("collabsApp", ["dndLists", "ngStorage"]);
+angular.module("collabsApp", ["dndLists"]);
 
-angular.module("collabsApp").controller("CollabsController", function($scope, $localStorage) {
+angular.module("collabsApp").controller("CollabsController", function($scope) {
 
     var listObjects = {"Backlog": [], "InProgress": [], "Done" : []};
-
-    
-
-    $scope.$storage = $localStorage.$default({
-      "Backlog": [], "InProgress": [], "Done" : []
-    });
 
     /* prepopulate list items */
 
     $scope.models = {
         selected: null,
-        lists: $scope.$storage,
+        lists: {"Backlog": [], "InProgress": [], "Done" : []},
         trashItems: {"items": []}
     };
 
     // Generate initial model
-    // for (var i = 1; i <= 3; ++i) {
-    //     $scope.$storage.Backlog.push({label: "Item A" + i});
-    //     $scope.$storage.InProgress.push({label: "Item B" + i});
-    //     $scope.$storage.Done.push({label: "Item C" + i});
-    // }
-
-
+    for (var i = 1; i <= 3; ++i) {
+        $scope.models.lists.Backlog.push({label: "Item A" + i});
+        $scope.models.lists.InProgress.push({label: "Item B" + i});
+        $scope.models.lists.Done.push({label: "Item C" + i});
+    }
 
     $scope.addItem = function(columnName){
         // Adds a new story to either Backlog, InProgress, and Done Column
-        $scope.$storage[columnName].push({label: "Story #1"});
+        $scope.models.lists[columnName].push({label: "Story #1"});
     }
 
     $scope.moveToTrash = function(columnName, label){
@@ -55,13 +47,5 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);
 
-    function retrieveObjects(){
-         var retrievedObjects = localStorage.getItem('listObjects');
-
-         return JSON.parse(retrievedObjects);
-    }
-
 
 });
-
-

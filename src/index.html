@@ -31,12 +31,12 @@
     </nav>
 
     <div ng-controller="CollabsController">
-      
+
       <div class="container-fluid">
         <div class="simpleDemo row">
             <div class="col-xs-10">
                 <div class="row">
-                    <div ng-repeat="(listName, list) in models.lists track by $index" class="col-xs-4">
+                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-center">
@@ -45,7 +45,7 @@
                                 <div class="actions">
                                   <ul class="nav nav-justified">
                                     <li>
-                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
+                                      <a href="#" class="add-story" ng-click="$storage.lists[listName].push({label: 'Story #1'})" title="Add Story">Add Story</a>
                                     </li>
                                     <li>
                                       <a href="#" class="" ng-click="" title="Clear Story">Clear Board</a>

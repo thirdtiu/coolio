@@ -12,15 +12,16 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
     
 
     $scope.$storage = $localStorage.$default({
-      "Backlog": [], "InProgress": [], "Done" : []
+      lists: {"Backlog": [], "Done" : [], "InProgress": []},
+      trashItems: {"items": []}
     });
 
     /* prepopulate list items */
 
     $scope.models = {
         selected: null,
-        lists: $scope.$storage,
-        trashItems: {"items": []}
+        lists: $scope.$storage.lists,
+        trashItems: $scope.$storage.trashItems
     };
 
     // Generate initial model
@@ -32,10 +33,10 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
 
 
 
-    $scope.addItem = function(columnName){
-        // Adds a new story to either Backlog, InProgress, and Done Column
-        $scope.$storage[columnName].push({label: "Story #1"});
-    }
+    // $scope.addItem = function(columnName){
+    //     // Adds a new story to either Backlog, InProgress, and Done Column
+    //     $scope.models.lists[columnName].push({label: "Story #1"});
+    // }
 
     $scope.moveToTrash = function(columnName, label){
         //Pressing 'x' on a story moves the item to the bottom Trash

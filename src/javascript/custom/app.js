@@ -41,8 +41,14 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
     $scope.moveToTrash = function(columnName, label, index){
         //Pressing 'x' on a story moves the item to the bottom Trash
         $scope.models.trashItems.items.push({label: label, column: columnName});
+
+        //remove item from the draggable list
         delete $scope.$storage.lists[columnName].splice($scope.$storage.lists[columnName].indexOf(index));
          // alert(columnName + label);
+    }
+
+    $scope.clearBoard = function(columnName){
+        $scope.$storage.lists[columnName] = [];
     }
 
     $scope.toggleTrashBox = function(){

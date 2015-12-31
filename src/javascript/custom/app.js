@@ -38,9 +38,10 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
     //     $scope.models.lists[columnName].push({label: "Story #1"});
     // }
 
-    $scope.moveToTrash = function(columnName, label){
+    $scope.moveToTrash = function(columnName, label, index){
         //Pressing 'x' on a story moves the item to the bottom Trash
         $scope.models.trashItems.items.push({label: label, column: columnName});
+        delete $scope.$storage.lists[columnName].splice($scope.$storage.lists[columnName].indexOf(index));
          // alert(columnName + label);
     }
 

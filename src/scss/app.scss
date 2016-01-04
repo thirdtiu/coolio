@@ -51,6 +51,18 @@ body{
 .search-block{
   margin-bottom: 20px;
 }
+.trash-list{
+  margin:0 0 20px 0;
+  padding:0;
+  li{
+    display: inline-block;
+    list-style-type: none;
+    padding:0 5px;
+    background-color: lighten(#333,70%);
+    margin-right: 5px;
+    border-radius:10px;
+  }
+}
 .cards{
     list-style-type: none;
     margin:0;

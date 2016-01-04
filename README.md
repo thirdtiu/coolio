@@ -30,4 +30,5 @@ Everything is in /src folder, if you edit stuff inside this directory, execute `
 ##To-dos
 
 UI Improvements
+Recycle Bin to have the ability to restore or permanently delete a story.
 

@@ -113,14 +113,9 @@
         <div class="container-fluid">
           <h3>Recycle Bin</h3>
           <div ng-repeat="items in models.trashItems">
-            <ul class="cards">
-                <!-- The dnd-draggable directive makes an element draggable and will
-                     transfer the object that was assigned to it. If an element was
-                     dragged away, you have to remove it from the original list
-                     yourself using the dnd-moved attribute -->
+            <ul class="trash-list">
                 <li class="card" ng-repeat="item in items">
-                    <span>{{item.label}}</span>
-                    
+                    <span>{{item.label}}</span>    
                 </li>
             </ul>
           </div>

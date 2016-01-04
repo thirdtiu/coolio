@@ -51,7 +51,7 @@
                                 <div class="actions">
                                   <ul class="nav nav-justified">
                                     <li>
-                                      <a href="#" class="add-story" ng-click="$storage.lists[listName].push({label: 'Story #1'})" title="Add Story">Add Story</a>
+                                      <a href="#" class="add-story" ng-click="$storage.lists[listName].push({label: 'Story #1', color: 'white'})" title="Add Story">Add Story</a>
                                     </li>
                                     <li>
                                       <a href="#" class="" ng-click="clearBoard(listName)" title="Clear Story">Clear Board</a>
@@ -72,7 +72,7 @@
                                         <span>{{item.label}}</span>
                                         <ul class="actions">
                                           <li><a href="#" ng-click="editorEnabled=!editorEnabled"><i class="material-icons">mode_edit</i></a></li>
-                                          <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
+                                          <li><a href="#" ng-click="changeColor()" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
                                           <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label, $index)"><i class="material-icons">clear</i></a></li>
                                         </ul>
                                       </div>

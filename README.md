@@ -30,5 +30,6 @@ Everything is in /src folder, if you edit stuff inside this directory, execute `
 ##To-dos
 
 UI Improvements
+Story Cards color change
 Recycle Bin to have the ability to restore or permanently delete a story.
 

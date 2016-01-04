@@ -47,6 +47,10 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
          // alert(columnName + label);
     }
 
+    $scope.changeColor = function(){
+        alert('test');
+    }
+
     $scope.clearBoard = function(columnName){
         $scope.$storage.lists[columnName] = [];
     }

@@ -8,7 +8,8 @@
     
     <title>Coolio</title>
     
-    
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Raleway:400,300,500,600,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -35,6 +36,11 @@
       <div class="container-fluid">
         <div class="simpleDemo row">
             <div class="col-xs-10">
+                <div class="search-block clearfix">
+                  <div class="pull-right">
+                    <input class="form-control input-lg" type="text" ng-model="query" placeholder="Search Tickets">
+                  </div>
+                </div>
                 <div class="row">
                     <div ng-repeat="(listName, list) in models.lists" class="col-xs-4">
                         <div class="panel panel-primary">
@@ -61,20 +67,20 @@
                                        transfer the object that was assigned to it. If an element was
                                        dragged away, you have to remove it from the original list
                                        yourself using the dnd-moved attribute -->
-                                  <li class="card" ng-repeat="item in list" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                                  <li class="card" ng-repeat="item in list | filter: query" dnd-draggable="item" dnd-moved="list.splice($index, 1)" dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
                                       <div ng-hide="editorEnabled">
                                         <span>{{item.label}}</span>
                                         <ul class="actions">
-                                          <!-- <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
-                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label)"><i class="material-icons">clear</i></a></li> -->
-                                          <li><a href="#" ng-click="editorEnabled=!editorEnabled">E&nbsp;</a></li>
-                                          <li><a href="#" title="Change Background Color"><i class="material-icons">f</i></a></li>
-                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label, $index)"><i class="material-icons">x</i></a></li>
+                                          <li><a href="#" ng-click="editorEnabled=!editorEnabled"><i class="material-icons">mode_edit</i></a></li>
+                                          <li><a href="#" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
+                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label, $index)"><i class="material-icons">clear</i></a></li>
                                         </ul>
                                       </div>
                                       <div ng-show="editorEnabled">
-                                        <input ng-model="item.label">
-                                        <a href="#" ng-click="editorEnabled=!editorEnabled">Done</a>
+                                        <input ng-model="item.label" class="form-control">
+                                        <div class="text-right">
+                                          <a href="#" ng-click="editorEnabled=!editorEnabled">Done</a>
+                                        </div>
                                       </div>
                                   </li>
                               </ul>

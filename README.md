@@ -15,3 +15,8 @@ On the app directory, start the server:
 You can now access the app on:
 
 `http://localhost:8080/dev/`
+
+##To-dos
+
+UI Improvements
+

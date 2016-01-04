@@ -47,8 +47,8 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
          // alert(columnName + label);
     }
 
-    $scope.changeColor = function(){
-        alert('test');
+    $scope.changeColor = function(idx, columnName){
+        alert(idx + columnName);
     }
 
     $scope.clearBoard = function(columnName){

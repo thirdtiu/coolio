@@ -72,7 +72,7 @@
                                         <span>{{item.label}}</span>
                                         <ul class="actions">
                                           <li><a href="#" ng-click="editorEnabled=!editorEnabled"><i class="material-icons">mode_edit</i></a></li>
-                                          <li><a href="#" ng-click="changeColor()" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
+                                          <li><a href="#" ng-click="changeColor($index, listName)" title="Change Background Color"><i class="material-icons">format_color_fill</i></a></li>
                                           <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label, $index)"><i class="material-icons">clear</i></a></li>
                                         </ul>
                                       </div>

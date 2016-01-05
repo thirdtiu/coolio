@@ -110,6 +110,13 @@ body{
   /* Set the fixed height of the footer here */
   // height: 60px;
   background-color: #f5f5f5;
+  .cards{
+    .card{
+      width: 33.33%;
+      float: left;
+      margin-right: 15px;
+    }
+  }
 }
 
 

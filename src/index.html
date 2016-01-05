@@ -117,11 +117,15 @@
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <h3>Recycle Bin</h3>
+          <p><strong>Recycle Bin</strong></p>
           <div ng-repeat="items in models.trashItems">
-            <ul class="trash-list">
+            <ul class="cards">
                 <li class="card" ng-repeat="item in items">
-                    <span>{{item.label}}</span>    
+                    <span>{{item.label}}</span>
+                    <ul class="actions">
+                      <li><a href="#" ng-click="putBack($index, item.label, item.column)">Put Back</a></li>
+                      <li><a href="#" ng-click="permanentlyDelete($index)">Permanently Delete</a></li>
+                    </ul>
                 </li>
             </ul>
           </div>

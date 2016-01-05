@@ -44,7 +44,17 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
 
         //remove item from the draggable list
         delete $scope.$storage.lists[columnName].splice($scope.$storage.lists[columnName].indexOf(index));
-         // alert(columnName + label);
+    }
+
+    $scope.permanentlyDelete = function(index){
+        // alert(index);
+        delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
+    }
+
+    $scope.putBack = function(index, name, columnName){
+        // alert(index+label+columnName);
+        $scope.$storage.lists[columnName].push({label: name, color: 'white'})
+        delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
     }
 
     $scope.changeColor = function(idx, columnName){

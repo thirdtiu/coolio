@@ -7871,6 +7871,12 @@ body {
   background-color: #f5f5f5;
 }
 
+.footer .cards .card {
+  width: 33.33%;
+  float: left;
+  margin-right: 15px;
+}
+
 /** THE 3 MAJOR PANELS **/
 .add-story {
   color: #fff;

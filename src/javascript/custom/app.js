@@ -13,7 +13,8 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
 
     $scope.$storage = $localStorage.$default({
       lists: {"Backlog": [], "Done" : [], "InProgress": []},
-      trashItems: {"items": []}
+      trashItems: {"items": []},
+      counter: 0
     });
 
     /* prepopulate list items */
@@ -33,15 +34,19 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
 
 
 
-    // $scope.addItem = function(columnName){
-    //     // Adds a new story to either Backlog, InProgress, and Done Column
-    //     $scope.models.lists[columnName].push({label: "Story #1"});
-    // }
+    $scope.addItem = function(columnName){
+        // Adds a new story to either Backlog, InProgress, and Done Column
+        $scope.$storage.lists[columnName].push({label: 'Story #' + ++$scope.$storage.counter, color: 'white'})
 
-    $scope.moveToTrash = function(columnName, label, index){
+    }
+
+    $scope.moveToTrash = function(columnName, item, index){
         //Pressing 'x' on a story moves the item to the bottom Trash
         // $scope.models.trashItems.items.push({label: label, column: columnName});
-        $scope.$storage.trashItems.items.push({label: label, column: columnName});
+        
+        item.column = columnName;
+        console.log(item);
+        $scope.$storage.trashItems.items.push(item);
 
         //remove item from the draggable list
         // delete $scope.$storage.lists[columnName].splice($scope.$storage.lists[columnName].indexOf(index));
@@ -52,9 +57,11 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
         delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
     }
 
-    $scope.putBack = function(index, name, columnName){
+    $scope.putBack = function(index, item){
         // alert(index+label+columnName);
-        $scope.$storage.lists[columnName].push({label: name, color: 'white'})
+        var columnName = item.column;
+        delete item.column;
+        $scope.$storage.lists[columnName].push(item);
         delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
     }
 
@@ -66,11 +73,7 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
         $scope.$storage.lists[columnName] = [];
     }
 
-    $scope.toggleTrashBox = function(){
-        if( $("#trash-box").hasClass("collapsed") ){
-            alert("collapsed");
-        }
-    }
+    
 
 
     // Model to JSON for demo purpose
@@ -84,10 +87,6 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
          return JSON.parse(retrievedObjects);
     }
 
-    $scope.updateBg = function(me, item) {
-        console.log(me);
-        window.me = this;
-    }
 
 
 });

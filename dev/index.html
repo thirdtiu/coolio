@@ -51,7 +51,7 @@
                                 <div class="actions">
                                   <ul class="nav nav-justified">
                                     <li>
-                                      <a href="#" class="add-story" ng-click="$storage.lists[listName].push({label: 'Story #1', color: 'white'})" title="Add Story">Add Story</a>
+                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
                                     </li>
                                     <li>
                                       <a href="#" class="" ng-click="clearBoard(listName)" title="Clear Story">Clear Board</a>
@@ -73,9 +73,9 @@
                                         <ul class="actions">
                                           <li><a href="#" ng-click="editorEnabled=!editorEnabled"><i class="material-icons">mode_edit</i></a></li>
                                           <li>
-                                            <a href="#" ng-click="changeColor($index, listName)" title="Change Background Color"><i class="material-icons">format_color_fill</i></a>
-                                            <div class="colorpickbox">
-                                              <select ng-model="item.color" name="colorpicker" id="">
+                                            <a href="#" ng-click="colorPickerEnabled=!colorPickerEnabled" title="Change Background Color"><i class="material-icons">format_color_fill</i></a>
+                                            <div ng-show="colorPickerEnabled" class="colorpickbox">
+                                              <select ng-model="item.color" ng-change="colorPickerEnabled=!colorPickerEnabled" name="colorpicker" id="">
                                                 <option value="white">White</option>
                                                 <option value="blue">Blue</option>
                                                 <option value="red">Red</option>
@@ -84,7 +84,7 @@
                                               </select>
                                             </div>
                                           </li>
-                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item.label, $index)"><i class="material-icons">clear</i></a></li>
+                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item, $index)"><i class="material-icons">clear</i></a></li>
                                         </ul>
                                       </div>
                                       <div ng-show="editorEnabled">
@@ -117,9 +117,7 @@
 
         </div>
       </div>
-      <div id="trash-box" class="collapsed">
-        <a href="#" class="collapsed toggle-button" ng-click="toggleTrashBox()">T</a>
-      </div>
+      
       <footer class="footer">
         <div class="container-fluid">
           <p><strong>Recycle Bin</strong></p>
@@ -128,7 +126,7 @@
                 <li class="card" ng-repeat="item in items">
                     <span>{{item.label}}</span>
                     <ul class="actions">
-                      <li><a href="#" ng-click="putBack($index, item.label, item.column)">Put Back</a></li>
+                      <li><a href="#" ng-click="putBack($index, item)">Put Back</a></li>
                       <li><a href="#" ng-click="permanentlyDelete($index)">Permanently Delete</a></li>
                     </ul>
                 </li>

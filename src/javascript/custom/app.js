@@ -84,6 +84,11 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
          return JSON.parse(retrievedObjects);
     }
 
+    $scope.updateBg = function(me, item) {
+        console.log(me);
+        window.me = this;
+    }
+
 
 });
 

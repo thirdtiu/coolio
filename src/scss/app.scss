@@ -92,6 +92,13 @@ body{
         li{
           float: left;
           padding:0;
+          position: relative;
+          .colorpickbox{
+            z-index: 99999;
+            position:absolute;
+            top:0;
+            // display: none;
+          }
         }
         a{
             color: #e4e4e4;

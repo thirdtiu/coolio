@@ -7851,6 +7851,13 @@ body {
 .cards .actions li {
   float: left;
   padding: 0;
+  position: relative;
+}
+
+.cards .actions li .colorpickbox {
+  z-index: 99999;
+  position: absolute;
+  top: 0;
 }
 
 .cards .actions a {

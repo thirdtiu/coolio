@@ -81,6 +81,9 @@
                                           <li>
                                             <a href="#" ng-click="colorPickerEnabled=!colorPickerEnabled" title="Change Background Color"><i class="material-icons">format_color_fill</i></a>
                                             <div ng-show="colorPickerEnabled" class="colorpickbox">
+                                              
+                                              <a href="#" class="colorpicker-toggle" title="Close Color Picker" ng-click="colorPickerEnabled=!colorPickerEnabled"><i class="material-icons">clear</i></a>
+
                                               <select ng-model="item.color" name="colorpicker" id="" ng-change="toggleBox()">
                                                 <option value="white">White</option>
                                                 <option value="blue">Blue</option>

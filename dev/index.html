@@ -37,12 +37,12 @@
         <div class="simpleDemo row">
             <div class="col-xs-10">
                 <div class="search-block clearfix">
-                  <div class="pull-right">
-                    <input class="form-control input-lg" type="text" ng-model="query" placeholder="Search Tickets">
+                  <div class="pull-left">
+                    <input class="form-control" type="text" ng-model="query" placeholder="Search Tickets">
                   </div>
                 </div>
                 <div class="row">
-                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4">
+                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4 col-md-2">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-center">
@@ -51,7 +51,7 @@
                                 <div class="actions">
                                   <ul class="nav nav-justified">
                                     <li>
-                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Story</a>
+                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Card</a>
                                     </li>
                                     <li>
                                       <a href="#" class="" ng-click="clearBoard(listName)" title="Clear Story">Clear Board</a>

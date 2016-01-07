@@ -259,6 +259,7 @@
   @include panel-variant($panel-primary-border, $panel-primary-text, $panel-primary-heading-bg, $panel-primary-border);
   .panel-heading{
     padding:0;
+    border-bottom:none;
   }
   .panel-title{
     padding:10px 0;
@@ -267,6 +268,10 @@
     color: #fff;
     padding-top:5px;
     padding-bottom:5px;
+    &:hover{
+      background-color:#fff;
+      color: #333;
+    }
   }
   & > .actions{
     background-color:lighten($brand-primary, 10%);

@@ -14,7 +14,8 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
     $scope.$storage = $localStorage.$default({
       lists: {"Backlog": [], "Done" : [], "InProgress": []},
       trashItems: {"items": []},
-      counter: 0
+      counter: 0,
+      firstTime: true
     });
 
     /* prepopulate list items */
@@ -24,7 +25,7 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
         lists: $scope.$storage.lists,
         trashItems: $scope.$storage.trashItems
     };
-
+    $scope.color = 'white';
     // Generate initial model
     // for (var i = 1; i <= 3; ++i) {
     //     $scope.$storage.Backlog.push({label: "Item A" + i});

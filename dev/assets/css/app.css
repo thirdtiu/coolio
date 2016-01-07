@@ -6575,6 +6575,10 @@ button.list-group-item-danger.active:focus {
   border-bottom: none;
 }
 
+.panel-primary .panel-heading > .actions {
+  background-color: #4d4d4d;
+}
+
 .panel-primary .panel-title {
   padding: 10px 0;
 }
@@ -6588,10 +6592,6 @@ button.list-group-item-danger.active:focus {
 .panel-primary .nav > li > a:hover {
   background-color: #fff;
   color: #333;
-}
-
-.panel-primary > .actions {
-  background-color: #4d4d4d;
 }
 
 .panel-success {

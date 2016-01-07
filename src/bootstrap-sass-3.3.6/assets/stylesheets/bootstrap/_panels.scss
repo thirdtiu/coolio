@@ -260,6 +260,9 @@
   .panel-heading{
     padding:0;
     border-bottom:none;
+    & > .actions{
+      background-color:lighten($brand-primary, 10%);
+    }
   }
   .panel-title{
     padding:10px 0;
@@ -272,9 +275,6 @@
       background-color:#fff;
       color: #333;
     }
-  }
-  & > .actions{
-    background-color:lighten($brand-primary, 10%);
   }
 }
 .panel-success {

@@ -42,7 +42,7 @@
                   </div>
                 </div>
                 <div class="row">
-                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4 col-md-2">
+                    <div ng-repeat="(listName, list) in models.lists" class="col-xs-4 col-sm-3">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-center">
@@ -81,7 +81,7 @@
                                           <li>
                                             <a href="#" ng-click="colorPickerEnabled=!colorPickerEnabled" title="Change Background Color"><i class="material-icons">format_color_fill</i></a>
                                             <div ng-show="colorPickerEnabled" class="colorpickbox">
-                                              <select ng-model="item.color" ng-change="colorPickerEnabled=!colorPickerEnabled" name="colorpicker" id="">
+                                              <select ng-model="item.color" name="colorpicker" id="" ng-change="toggleBox()">
                                                 <option value="white">White</option>
                                                 <option value="blue">Blue</option>
                                                 <option value="red">Red</option>

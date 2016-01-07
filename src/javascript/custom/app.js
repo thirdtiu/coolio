@@ -74,6 +74,12 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
         $scope.$storage.lists[columnName] = [];
     }
 
+    $scope.toggleBox = function(){
+
+        this.colorPickerEnabled = false;
+
+    }
+
     
 
 

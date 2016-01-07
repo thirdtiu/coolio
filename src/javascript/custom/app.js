@@ -5,7 +5,7 @@
 // ]);
 angular.module("collabsApp", ["dndLists", "ngStorage"]);
 
-angular.module("collabsApp").controller("CollabsController", function($scope, $localStorage) {
+angular.module("collabsApp").controller("CollabsController", ['$scope', '$localStorage', function($scope, $localStorage) {
 
     var listObjects = {"Backlog": [], "InProgress": [], "Done" : []};
 
@@ -96,6 +96,6 @@ angular.module("collabsApp").controller("CollabsController", function($scope, $l
 
 
 
-});
+}]);
 
 

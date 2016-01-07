@@ -7804,6 +7804,7 @@ body {
   padding-top: 70px;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  min-width: 640px;
 }
 
 .search-block {

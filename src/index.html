@@ -29,22 +29,22 @@
           </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Help</a></li>
+          <li><a href="#" onclick="javascript:introJs().start();">Help</a></li>
         </ul>
       </div>
     </nav>
 
     <div ng-controller="CollabsController">
 
-      <div class="container-fluid">
+      <div class="container-fluid main-container">
         <div class="simpleDemo row">
             <div class="col-xs-12 col-lg-10">
                 <div class="search-block clearfix">
                   <div class="pull-left">
-                    <input class="form-control" type="text" ng-model="query" placeholder="Search Tickets">
+                    <input class="form-control" type="text" ng-model="query" placeholder="Search Tickets" data-step="4" data-intro="Search cards across all the boards" data-position="right">
                   </div>
                 </div>
-                <div class="row">
+                <div class="row" data-step="1" data-intro="This are the three main board">
                     <div ng-repeat="(listName, list) in models.lists" class="col-xs-4 col-sm-4 col-md-3">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -54,7 +54,7 @@
                                 <div class="actions clearfix">
                                   <ul class="nav nav-justified">
                                     <li>
-                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story">Add Card</a>
+                                      <a href="#" class="add-story" ng-click="addItem(listName)" title="Add Story" data-step="2" data-intro="You can add cards using this button. Once card is created, you can edit, change background color, or archive. You can also drag it across different boards">Add Card</a>
                                     </li>
                                     <li>
                                       <a href="#" class="" ng-click="clearBoard(listName)" title="Clear Story">Clear Board</a>
@@ -96,7 +96,7 @@
                                               </select>
                                             </div>
                                           </li>
-                                          <li><a href="#" title="Delete" ng-click="moveToTrash(listName, item, $index)"><i class="material-icons">clear</i></a></li>
+                                          <li><a href="#" title="Archive" ng-click="moveToTrash(listName, item, $index)"><i class="material-icons">archive</i></a></li>
                                         </ul>
                                       </div>
                                       <div ng-show="editorEnabled">
@@ -117,7 +117,7 @@
             </div>
         
             <div class="col-xs-12 col-lg-2">
-                <div class="panel panel-default">
+                <div class="panel panel-default" data-step="3" data-intro="This is just for data display purposes. Everytime card is modified or created, the model automatically updates.">
                     <div class="panel-heading">
                         <h3 class="panel-title">Generated Model</h3>
                     </div>
@@ -130,7 +130,7 @@
         </div>
       </div>
       
-      <footer class="footer">
+      <footer class="footer" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to oblivion." data-position="top">
         <div class="container-fluid">
           <p><strong>Recycle Bin</strong></p>
           <div ng-repeat="items in models.trashItems">

@@ -7878,7 +7878,7 @@ tr.introjs-showElement > th {
   /* W3C */
   width: 20px;
   height: 20px;
-  line-height: 20px;
+  line-height: 11px;
   border: 3px solid white;
   border-radius: 50%;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3019', endColorstr='#cf0404', GradientType=0);
@@ -8285,6 +8285,13 @@ body {
   min-width: 640px;
 }
 
+@media (min-width: 768px) {
+  .main-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
 .search-block {
   margin-bottom: 20px;
 }
@@ -8343,6 +8350,7 @@ body {
   z-index: 99999;
   position: absolute;
   top: 0;
+  left: -10px;
   padding: 20px 10px 20px;
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -8385,15 +8393,9 @@ body {
 }
 
 /**
- * For the correct positioning of the placeholder element, the dnd-list and
+ * For the correct positioning of the placeholder element, the dnd-list and`
  * it's children must have position: relative
  */
-.simpleDemo ul[dnd-list],
-.simpleDemo ul[dnd-list] > li {
-  position: relative;
-  z-index: 0;
-}
-
 /**
  * The dnd-list should always have a min-height,
  * otherwise you can't drop to it once it's empty

@@ -94,6 +94,14 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
          return JSON.parse(retrievedObjects);
     }
 
+    angular.element(document).ready(function () {
+        if ($scope.$storage.firstTime == true) {
+            introJs().start().oncomplete(function() {
+              $scope.$storage.firstTime = false;
+            });
+        };
+    });
+
 
 
 }]);

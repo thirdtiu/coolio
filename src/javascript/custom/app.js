@@ -1,15 +1,10 @@
 'use strict';
 
-// var collabsApp = angular.module('collabsApp', [
-//     'collabsControllers'
-// ]);
 angular.module("collabsApp", ["dndLists", "ngStorage"]);
 
 angular.module("collabsApp").controller("CollabsController", ['$scope', '$localStorage', function($scope, $localStorage) {
 
     var listObjects = {"Backlog": [], "InProgress": [], "Done" : []};
-
-    
 
     $scope.$storage = $localStorage.$default({
       lists: {"Backlog": [], "Done" : [], "InProgress": []},
@@ -18,39 +13,27 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
       firstTime: true
     });
 
-    /* prepopulate list items */
 
     $scope.models = {
         selected: null,
         lists: $scope.$storage.lists,
         trashItems: $scope.$storage.trashItems
     };
+    
     $scope.color = 'white';
-    // Generate initial model
-    // for (var i = 1; i <= 3; ++i) {
-    //     $scope.$storage.Backlog.push({label: "Item A" + i});
-    //     $scope.$storage.InProgress.push({label: "Item B" + i});
-    //     $scope.$storage.Done.push({label: "Item C" + i});
-    // }
 
-
-
+    // Adds a new story to either Backlog, InProgress, and Done Column
     $scope.addItem = function(columnName){
-        // Adds a new story to either Backlog, InProgress, and Done Column
         $scope.$storage.lists[columnName].push({label: 'Story #' + ++$scope.$storage.counter, color: 'white'})
-
     }
 
+    //Pressing 'archive' on a story moves the item to the bottom Trash
     $scope.moveToTrash = function(columnName, item, index){
-        //Pressing 'x' on a story moves the item to the bottom Trash
-        // $scope.models.trashItems.items.push({label: label, column: columnName});
-        
         item.column = columnName;
         console.log(item);
         $scope.$storage.trashItems.items.push(item);
 
         //remove item from the draggable list
-        // delete $scope.$storage.lists[columnName].splice($scope.$storage.lists[columnName].indexOf(index));
         $scope.$storage.lists[columnName].splice(index, 1);
     }
 
@@ -59,7 +42,6 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
     }
 
     $scope.putBack = function(index, item){
-        // alert(index+label+columnName);
         var columnName = item.column;
         delete item.column;
         $scope.$storage.lists[columnName].push(item);
@@ -75,13 +57,8 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
     }
 
     $scope.toggleBox = function(){
-
         this.colorPickerEnabled = false;
-
     }
-
-    
-
 
     // Model to JSON for demo purpose
     $scope.$watch('models', function(model) {
@@ -90,10 +67,10 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
 
     function retrieveObjects(){
          var retrievedObjects = localStorage.getItem('listObjects');
-
          return JSON.parse(retrievedObjects);
     }
 
+    //intro walkthrough stuff
     angular.element(document).ready(function () {
         if ($scope.$storage.firstTime == true) {
             introJs().start().oncomplete(function() {
@@ -101,8 +78,6 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
             });
         };
     });
-
-
 
 }]);
 

@@ -38,7 +38,7 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
     }
 
     $scope.permanentlyDelete = function(index){
-        delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
+        delete $scope.$storage.trashItems["items"].splice(index, 1);
     }
 
     $scope.putBack = function(index, item){

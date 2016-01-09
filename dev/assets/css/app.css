@@ -8375,6 +8375,7 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
+  height: 57px;
   width: 100%;
   /* Set the fixed height of the footer here */
   background-color: #f5f5f5;
@@ -8382,7 +8383,7 @@ body {
 
 .footer .hd {
   background-color: #cccccc;
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 15px 20px;
 }
 
@@ -8396,6 +8397,12 @@ body {
   float: left;
   margin-right: 15px;
   padding-right: 70px;
+}
+
+.footer.expanded {
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #fbfbfb;
 }
 
 /** THE 3 MAJOR PANELS **/

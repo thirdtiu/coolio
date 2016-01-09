@@ -17,7 +17,8 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
     $scope.models = {
         selected: null,
         lists: $scope.$storage.lists,
-        trashItems: $scope.$storage.trashItems
+        trashItems: $scope.$storage.trashItems,
+        footerExpanded: false
     };
     
     $scope.color = 'white';
@@ -69,6 +70,10 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
          var retrievedObjects = localStorage.getItem('listObjects');
          return JSON.parse(retrievedObjects);
     }
+
+    $scope.toggleFooter = function() {
+        $scope.models.footerExpanded = !$scope.models.footerExpanded;
+    }  
 
     //intro walkthrough stuff
     angular.element(document).ready(function () {

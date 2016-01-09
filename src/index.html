@@ -130,10 +130,10 @@
         </div>
       </div>
       
-      <footer class="footer" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to oblivion." data-position="top">
-        <h4 class="hd">
-          <a href="#"><i class="material-icons">archive</i> <strong>Archive</strong> {{models.trashItems.items.length != 0 ? "("+models.trashItems.items.length+")" : ""}}</a>
-        </h4>
+      <footer class="footer" ng-class="{'expanded': models.footerExpanded}" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to oblivion." data-position="top">
+        <a href="#" ng-click="toggleFooter()">
+          <h4 class="hd"><i class="material-icons">archive</i> <strong>Archive</strong> {{models.trashItems.items.length != 0 ? "("+models.trashItems.items.length+")" : ""}}</h4>
+        </a>
         <div class="container-fluid">
             <div ng-repeat="items in models.trashItems">
               <ul class="cards">

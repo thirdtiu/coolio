@@ -131,19 +131,21 @@
       </div>
       
       <footer class="footer" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to oblivion." data-position="top">
+        <h4 class="hd">
+          <a href="#"><i class="material-icons">archive</i> <strong>Archive</strong> {{models.trashItems.items.length != 0 ? "("+models.trashItems.items.length+")" : ""}}</a>
+        </h4>
         <div class="container-fluid">
-          <p><strong>Recycle Bin</strong></p>
-          <div ng-repeat="items in models.trashItems">
-            <ul class="cards">
-                <li class="card" ng-repeat="item in items">
-                    <span>{{item.label}}</span>
-                    <ul class="actions">
-                      <li><a href="#" ng-click="putBack($index, item)"><i class="material-icons">replay</i></a></li>
-                      <li><a href="#" ng-click="permanentlyDelete($index)"><i class="material-icons">delete</i></a></li>
-                    </ul>
-                </li>
-            </ul>
-          </div>
+            <div ng-repeat="items in models.trashItems">
+              <ul class="cards">
+                  <li class="card" ng-repeat="item in items">
+                      <span>{{item.label}}</span>
+                      <ul class="actions">
+                        <li><a href="#" ng-click="putBack($index, item)"><i class="material-icons">replay</i></a></li>
+                        <li><a href="#" ng-click="permanentlyDelete($index)"><i class="material-icons">delete</i></a></li>
+                      </ul>
+                  </li>
+              </ul>
+            </div>
         </div>
       </footer>
 

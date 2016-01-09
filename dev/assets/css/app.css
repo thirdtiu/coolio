@@ -1482,7 +1482,7 @@ hr {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -8378,6 +8378,17 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   background-color: #f5f5f5;
+}
+
+.footer .hd {
+  background-color: #cccccc;
+  margin: 0;
+  padding: 15px 20px;
+}
+
+.footer .hd .material-icons {
+  position: relative;
+  top: 5px;
 }
 
 .footer .cards .card {

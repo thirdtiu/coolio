@@ -45,7 +45,7 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
         var columnName = item.column;
         delete item.column;
         $scope.$storage.lists[columnName].push(item);
-        delete $scope.$storage.trashItems["items"].splice($scope.$storage.trashItems["items"].indexOf(index));
+        delete $scope.$storage.trashItems["items"].splice(index, 1);
     }
 
     $scope.changeColor = function(idx, columnName){
@@ -60,7 +60,7 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
         this.colorPickerEnabled = false;
     }
 
-    // Model to JSON for demo purpose
+    // Model to JSON for demo purposes
     $scope.$watch('models', function(model) {
         $scope.modelAsJson = angular.toJson(model, true);
     }, true);

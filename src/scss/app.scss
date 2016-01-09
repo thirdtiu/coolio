@@ -131,9 +131,19 @@ body{
   position: fixed;
   bottom: 0;
   width: 100%;
+
   /* Set the fixed height of the footer here */
   // height: 60px;
   background-color: #f5f5f5;
+  .hd{
+    background-color:lighten($brand-primary, 60%);
+    margin:0;
+    padding:15px 20px;
+    .material-icons{
+      position:relative;
+      top:5px;
+    }
+  }
   .cards{
     .card{
       width: 16.6667%;

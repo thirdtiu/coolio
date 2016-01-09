@@ -33,6 +33,10 @@ Everything is in /src folder, if you edit stuff inside this directory, execute `
 
 ##To-dos
 
-Overall UI Improvements
+Overall UI improvements
+
+Dropdown for colorpicker
+
+
 
 

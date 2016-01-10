@@ -29,7 +29,7 @@
           </a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#" onclick="introJs().start()" data-step="6" data-intro="Click here to play the walkthrough again">Help</a></li>
+          <li><a href="#" onclick="introJs().start()" data-step="6" data-intro="Click here to play the walkthrough again" data-position="left">Help</a></li>
         </ul>
       </div>
     </nav>
@@ -44,7 +44,7 @@
                     <input class="form-control" type="text" ng-model="query" placeholder="Search Tickets" data-step="4" data-intro="Search cards across all the boards" data-position="right">
                   </div>
                 </div>
-                <div class="row" data-step="1" data-intro="These are the three main board">
+                <div class="row" data-step="1" data-intro="These are the three main board" data-position="top">
                     <div ng-repeat="(listName, list) in models.lists" class="col-xs-4 col-sm-4 col-md-3">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
@@ -111,7 +111,7 @@
             </div>
         
             <div class="col-xs-12 col-lg-2">
-                <div class="panel panel-default" data-step="3" data-intro="This is just for data display purposes. Everytime card is modified or created, the model automatically updates.">
+                <div class="panel panel-default" data-step="3" data-intro="This is just for data display purposes. Everytime card is modified or created, the model automatically updates." data-position="left">
                     <div class="panel-heading">
                         <h3 class="panel-title">Generated Model</h3>
                     </div>
@@ -124,7 +124,7 @@
         </div>
       </div>
       
-      <footer class="footer" ng-class="{'expanded': models.footerExpanded}" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to oblivion." data-position="top">
+      <footer class="footer" ng-class="{'expanded': models.footerExpanded}" data-step="5" data-intro="All archived card will be stored here. You can either 'put back' or delete to card oblivion." data-position="top">
         <a href="#" ng-click="toggleFooter()">
           <h4 class="hd"><i class="material-icons">archive</i> <strong>Archive</strong> {{models.trashItems.items.length != 0 ? "("+models.trashItems.items.length+")" : ""}}</h4>
         </a>

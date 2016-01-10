@@ -7,7 +7,7 @@ angular.module("collabsApp").controller("CollabsController", ['$scope', '$localS
     var listObjects = {"Backlog": [], "InProgress": [], "Done" : []};
 
     $scope.$storage = $localStorage.$default({
-      lists: {"Backlog": [], "Done" : [], "InProgress": []},
+      lists: {"Backlog": [], "InProgress" : [], "Done": []},
       trashItems: {"items": []},
       counter: 0,
       firstTime: true

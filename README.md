@@ -18,6 +18,8 @@ You can now access the app on:
 
 `http://localhost:8080/dev/`
 
+`http://localhost:8080/prod/`
+
 ##Development Process
 
 I am using [grunt](http://gruntjs.com/) for building the app.

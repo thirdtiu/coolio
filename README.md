@@ -3,7 +3,8 @@ Coolio - A trello clone app
 
 ##Setup
 
-You must have [bower](http://bower.io/) and [npm](https://nodejs.org/en/download/) installed
+You must have [bower](http://bower.io/) and [npm](https://nodejs.org/en/download/) installed.
+
 After pulling from repo, install npm and bower packages:
 
 `npm install`
